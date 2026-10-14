@@ -2,8 +2,11 @@ import Job from './Job'
 
 function Experience() {
   return (
-    <section id="experience">
-      <h2>Досвід роботи</h2>
+    <section
+      id="experience"
+      className="flex flex-col gap-5 rounded-xl border border-slate-200 bg-white p-6 shadow-md transition hover:-translate-y-1 hover:shadow-xl md:col-span-2"
+    >
+      <h2 className="text-2xl font-bold text-blue-900">Досвід роботи</h2>
       <Job
         title="Telegram-бот для студії автотюнінгу G23"
         place="Львів"
