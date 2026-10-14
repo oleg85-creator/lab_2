@@ -5,32 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Резюме Олега Паука — веброзробник, студент спеціальності Кібербезпека">
   <title>Резюме — Паук Олег</title>
+
+  <!-- 1. ЗОВНІШНІЙ спосіб: основна частина стилів лежить у styles.css -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- 2. ВНУТРІШНІЙ спосіб: невеликий блок стилів прямо в документі -->
+  <style>
+    #skills ol {
+      font-weight: 600;
+    }
+    footer h2 {
+      letter-spacing: 0.05em;
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <header id="site-header">
     <h1>Паук Олег</h1>
-    <p>Веброзробник та розробник Telegram-ботів</p>
+    <!-- 3. ВБУДОВАНИЙ (inline) спосіб: стиль в атрибуті style -->
+    <p style="font-size: 1.25rem; letter-spacing: 0.05em;">Веброзробник та розробник Telegram-ботів</p>
   </header>
 
-  <main>
-    <section id="about">
+  <main class="layout">
+    <section id="about" class="card wide">
       <h2>Про себе</h2>
       <p>Студент Національного університету «Львівська політехніка», спеціальність F5 «Кібербезпека». Створюю вебсайти та чат-боти для клієнтів, цікавлюся інформаційною безпекою.</p>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="card wide">
       <h2>Досвід роботи</h2>
-      <article>
+      <article class="job">
         <h3>Telegram-бот для студії автотюнінгу G23</h3>
-        <p>Львів · <time datetime="2026">2026</time></p>
+        <p class="meta">Львів · <time datetime="2026">2026</time></p>
         <ul>
           <li>Розробка Telegram-бота для прийому заявок клієнтів</li>
           <li>Автоматизація відповідей на типові запити</li>
         </ul>
       </article>
-      <article>
+      <article class="job">
         <h3>Вебсайти для клієнтів</h3>
-        <p>Фріланс · <time datetime="2026">2026</time></p>
+        <p class="meta">Фріланс · <time datetime="2026">2026</time></p>
         <ul>
           <li>Лендинг для стоматологічної клініки</li>
           <li>Сайт оренди котеджів Symbio House (Flask)</li>
@@ -39,19 +53,19 @@
       </article>
     </section>
 
-    <section id="education">
+    <section id="education" class="card">
       <h2>Освіта</h2>
       <p><strong>Національний університет «Львівська політехніка»</strong></p>
       <p>Спеціальність F5 «Кібербезпека»</p>
       <p>Вивчаю: програмування C#, дискретну та вищу математику, стандарти інформаційної безпеки.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="card">
       <h2>Навички</h2>
       <ol>
         <li>Python (Flask, FastAPI)</li>
         <li>C#</li>
-        <li>HTML, Git</li>
+        <li>HTML, CSS, Git</li>
         <li>Розробка Telegram-ботів</li>
       </ol>
     </section>

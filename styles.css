@@ -1,0 +1,164 @@
+/* ==========================================================
+   styles.css — зовнішня таблиця стилів для резюме
+   Зміст: 1. Скидання  2. Теги  3. Шапка (ID)  4. Макет (Grid)
+          5. Картки (класи)  6. Посилання (атрибути, псевдокласи)
+          7. Підвал  8. Медіазапит
+   ========================================================== */
+
+/* ---------- 1. Скидання та блокова модель ---------- */
+* {
+  box-sizing: border-box; /* width/height включають padding і border */
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- 2. Селектори тегів ---------- */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background-color: #f1f5f9;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #1e3a8a;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+p {
+  margin-bottom: 8px;
+}
+
+ul,
+ol {
+  padding-left: 24px; /* відступ зліва для маркерів списку */
+}
+
+/* ---------- 3. Шапка (селектор ID) ---------- */
+#site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  color: #ffffff;
+  background-color: #1d4ed8;
+  border-bottom: 6px solid #1e3a8a;
+}
+
+/* ---------- 4. Макет сторінки (CSS Grid) ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* дві колонки */
+  gap: 24px;
+  max-width: 960px;
+  margin: 32px auto; /* центрування по горизонталі */
+  padding: 0 16px;
+}
+
+.wide {
+  grid-column: 1 / -1; /* на всю ширину сітки */
+}
+
+/* ---------- 5. Картки (селектори класів) ---------- */
+.card {
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.job {
+  margin-bottom: 16px;
+  padding-left: 16px;
+  border-left: 4px solid #3b82f6;
+}
+
+.meta {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* псевдоклас :hover — картка піднімається при наведенні */
+.card:hover {
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+}
+
+/* псевдоклас :last-child — у останнього блоку немає зайвого відступу */
+.job:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 6. Посилання (селектори атрибутів і псевдокласи) ---------- */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* псевдокласи :hover та :focus */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* селектор атрибута: зовнішні посилання, що відкриваються у новій вкладці */
+a[target="_blank"]::after {
+  content: " ↗";
+}
+
+/* селектор атрибута: посилання на пошту */
+a[href^="mailto:"] {
+  font-weight: 600;
+}
+
+/* ---------- 7. Підвал ---------- */
+footer {
+  margin-top: 32px;
+  padding: 24px 16px;
+  color: #e2e8f0;
+  background-color: #1e293b;
+  text-align: center;
+}
+
+footer h2 {
+  color: #ffffff;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer a {
+  color: #7dd3fc;
+}
+
+/* ---------- 8. Медіазапит для вузьких екранів ---------- */
+@media (max-width: 700px) {
+  .layout {
+    grid-template-columns: 1fr; /* одна колонка */
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
